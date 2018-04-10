@@ -7,6 +7,6 @@ Multiples.rb (complet)
 
 Cesar.rb (complet)
 
-StockPicker.rb (complet)
+StockPicker.rb (incomplet)
 
 JeanMi.rb (pas fait)
