@@ -6,22 +6,12 @@ n = gets.chomp.to_i
 
  def chiffre_de_cesar(text, n)
   text = text.split("") #split permet de prendre séparament les donnés que l'on entre dans (text = gets.chomp) le ("") -> chaque lettre
-  c = text.collect do  |x| 
- if x.ord >= 'a'.ord 
- return 97+((x.ord-97+n)%26) 
- end
+  c = text.collect{ |x| 
+ x.ord >= 'a'.ord ? 97+((x.ord-97+n)%26) : # --> en fonction du chiffre entré, modulo 26, on ajoute une constante et on utilise le modulo 26 pour avoir le texte   
+  x.ord > 'A'.ord ? 65+((x.ord-65+n)%26) : x.ord }
 
-  # --> en fonction du chiffre entré, modulo 26 (une solution apporté par un étudiant sur Odin Project)  
- if  x.ord > 'A'.ord 
- return  65+((x.ord-65+n)%26) 
- else 
-  x.ord 
-
-end
-
-  d = c.collect do |x| x.chr  
-  d.join() 
-  end 
+  d = c.collect { |x| x.chr } 
+  d.join()  
 end
 
 
